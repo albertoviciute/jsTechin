@@ -160,21 +160,128 @@ function squareElement(arr){
 // console.log(squareElement([1, 2, 3]));
 
 // 17. Calculate the sum of an array of numbers using a callback function.
+
+function calculateArraySum(arr) {
+    return arr.reduce((acc, val) => acc + val, 0);
+}
+
+// console.log(calculateArraySum([1, 2, 3]));
+
+// 18. Greets a friend with their name.
+
+function greetFriend(name){
+    return `Hello, ${name}! How are you?`
+}
+
+// console.log(greetFriend('Santa'));
+
+// 19. Multiplies two numbers
+
+function multipieNums(num1, num2){
+    return num1 * num2;
+}
+
+// console.log(multipieNums(3,5));
+
+// 20. Task
 /**
- * Calculate the sum of an array of numbers using a callback function.
+ * Finds the maximum number from a list of numbers.
  *
- * @param {number[]} numbers - An array of numbers to sum.
- * @param {function} callback - A callback function to process the sum.
- * @returns {number} The result of the callback function.
+ * @param {...number} numbers - The numbers to find the maximum from.
+ * @returns {number} The maximum number from the provided list of numbers.
  *
  * @example
- * // Define a callback function to calculate the square of the sum
- * function squareSum(sum) {
- *   return sum * sum;
- * }
- *
- * // Calculate the sum of [1, 2, 3] and then square the result
- * const result = calculateArraySum([1, 2, 3], squareSum);
- * console.log(result); // Output: 36
+ * // Find the maximum from the numbers 5, 8, and 3
+ * const maxNumber = findMaximum(5, 8, 3);
+ * console.log(maxNumber); // Output: 8
  */
+
+// let arr = [22,99,100,55]
+
+// console.log(Math.max(...arr));
+
+// 21. Task
+/**
+ * Find the length of a string.
+ *
+ * @param {string} inputString - The string for which to determine the length.
+ * @returns {number} The length of the input string.
+ *
+ * @example
+ * // Find the length of the string "Hello, World!"
+ * const stringLength = findStringLength("Hello, World!");
+ * console.log(stringLength); // Output: 13
+ */
+
+// 22. Task
+/**
+ * Concatenates two arrays using the spread operator.
+ *
+ * @param {Array} arr1 - The first array.
+ * @param {Array} arr2 - The second array.
+ * @returns {Array} The concatenated array.
+ *
+ * @example
+ * // Concatenate arrays [1, 2, 3] and [4, 5, 6]
+ * const concatenatedArray = concatenateArrays([1, 2, 3], [4, 5, 6]);
+ * console.log(concatenatedArray); // Output: [1, 2, 3, 4, 5, 6]
+ */
+
+// 23. Task
+/**
+/**
+ * Check if a number is even.
+ *
+ * @param {number} num - The number to check for evenness.
+ * @returns {boolean} true if the number is even, false if it's odd.
+ *
+ * @example
+ * // Check if the number 6 is even
+ * const isEven = checkIfEven(6);
+ * console.log(isEven); // Output: true
+ */
+
+// 24. Task
+/**
+ * Generate a random whole number between 1 and 100.
+ *
+ * @returns {number} A random whole number between 1 and 100.
+ *
+ * @example
+ * // Generate a random whole number between 1 and 100
+ * const randomNumber = generateRandomNumberInRange();
+ * console.log(randomNumber);
+ */
+
+// 25. Task
+/**
+ * Converts an array of strings to uppercase.
+ *
+ * @param {string[]} array - The array of strings to convert.
+ * @returns {string[]} The converted array of uppercase strings.
+ *
+ * @example
+ * // Convert an array of strings to uppercase
+ * const originalArray = ["apple", "banana", "cherry"];
+ * const uppercaseArray = convertArrayToUppercase(originalArray);
+ * console.log(uppercaseArray); // Output: ["APPLE", "BANANA", "CHERRY"]
+ */
+
+// Intermediate
+
+// 1 Task
+/**
+ * Removes specified elements from an array and replaces them with new elements.
+ * @param {string[]} arr - The array to modify.
+ * @param {number} start - The index at which to start changing the array.
+ * @param {number} deleteCount - The number of elements to remove.
+ * @param {string[]} elementsToAdd - The elements to add in place of the removed elements.
+ * @returns {string[]} The modified array. before example: ["apple", "banana", "cherry"] after example: ["apple", "kiwi", "orange", "cherry"]
+*/
+// Hints to help solve the task:
+// 1. Use the splice method to remove elements from the array.
+// 2. The splice method takes parameters for the start index, delete count, and elements to add.
+// 3. Replace the specified elements with the new elements.
+// 4. Return the modified array.
+
 
