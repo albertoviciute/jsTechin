@@ -23,10 +23,40 @@ divs.forEach((div) => {
     });
 });
 
-function computerMove() {
+function computerMove(start) {
     let move = getRandomNumberExcluding();
     let div = document.getElementById(move)
-    game(div);
+    game(div, start);
+}
+
+function game(div, start) {
+    let checkDiv = document.getElementsByClassName('container');
+    if (div.textContent == '' && checkDiv.length === 0) {
+        if (start == 1) {
+            div.textContent = 'X';
+            if (isWinner()) {
+                moveInfo.textContent = `Congrats winner is ${start == 2 ? 'user' : 'computer'}!`;
+                return;
+            }
+            start = 2;
+            moveInfo.textContent = 'Your move';
+        } else {
+            div.textContent = 'O';
+            if (isWinner()) {
+                moveInfo.textContent = `Congrats winner is ${start == 2 ? 'user' : 'computer'}!`;
+                return;
+            }
+            start = 1;
+            setTimeout(() => computerMove(start), 500);
+            moveInfo.textContent = 'Computer move';
+        }
+    } else {
+        if (checkDiv.length > 0) {
+            moveInfo.textContent = `Congrats winner is ${start == 2 ? 'user' : 'computer'}!`;
+        } else {
+            moveInfo.textContent = 'Box is already taken, please choose another';
+        }
+    }
 }
 
 function getRandomNumberExcluding() {
@@ -38,39 +68,28 @@ function getRandomNumberExcluding() {
     return randomNumber;
 }
 
-function game(div) {
 
-    if (div.textContent == '') {
-        if (start == 1) {
-            div.textContent = 'X';
-            start = 2;
-            moveInfo.textContent = 'Your move';
-        } else {
-            div.textContent = 'O';
-            start = 1;
-            setTimeout(computerMove, 2000);
-            moveInfo.textContent = 'Computer move';
+
+function isWinner() {
+    const winningCombinations = [
+        [1, 2, 3], [4, 5, 6], [7, 8, 9],
+        [1, 4, 7], [2, 5, 8], [3, 6, 9],
+        [1, 5, 9], [3, 5, 7]
+    ];
+
+    for (const combination of winningCombinations) {
+        const [a, b, c] = combination;
+        const divA = document.getElementById(a.toString());
+        const divB = document.getElementById(b.toString());
+        const divC = document.getElementById(c.toString());
+
+        if (divA.textContent === divB.textContent && divB.textContent === divC.textContent && divA.textContent !== '') {
+            divA.classList.add('container');
+            divB.classList.add('container');
+            divC.classList.add('container');
+            return true;
         }
-    } else {
-        moveInfo.textContent = 'Box is already taken, please choose another';
     }
-}
 
-// TO DO:
-function isWinner(){
-    let div1 = document.getElementById('1');
-    let div2 = document.getElementById('2');
-    let div3 = document.getElementById('3');
-    let div4 = document.getElementById('4');
-    let div5 = document.getElementById('5');
-    let div6 = document.getElementById('6');
-    let div7 = document.getElementById('7');
-    let div8 = document.getElementById('8');
-    let div9 = document.getElementById('9');
-    
-    if (div1.textContent === div2.textContent && div2.textContent === div3.textContent) {
-        div1.classList.add('container');
-        div2.classList.add('container');
-        div3.classList.add('container');
-    }
+    return false;
 }
