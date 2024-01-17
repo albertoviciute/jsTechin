@@ -55,7 +55,6 @@ function printObjValues2(arr) {
             console.log(arr[i][key]);
         }
     }
-
 }
 
 // 3. Sukurti objektą algos, kuriame išsaugoti šias reikšmes: Jonas - 300, Petras - 400, Rasa - 500. Apskaičiuoti ir atspausdinti visų darbuotojų algų bendrą sumą.
@@ -127,16 +126,38 @@ function printInfo(obj) {
 
 // 5. Sukurti masyvą, kuris saugotų tris objektus. Objektas turi dvi reikšmių poras. Pvz.: name: “John”, age: 33. Pridėti dar kelis objektus į masyvą. Objekto reikšmes įvesti iš klaviatūros.
 
+let threeObj = [
+    {
+        name: "John",
+        age: 33
+    },
+    {
+        name: "Anna",
+        age: 25
+    },
+    {
+        name: "Laura",
+        age: 39
+    }
+]
 
+// 5. 1. Sukurti funkciją, kuri spausdina visas objekto reikšmes: printInfo(arr);
 
-// Sukurti funkciją, kuri spausdina visas objekto reikšmes: printInfo(arr);
-// Sukurti tuščią masyvą. Iš klaviatūros n kartų įvesti prekės pavadinimą ir kainą (visos prekės skirtingos). Šią prekės informaciją išsaugoti objekte ir pridėti į masyvą. Sukurti atitinkamas funkcijas ir atspausdinti rezultatus:
-//         1. Visų prekių sąrašą: prekės pavadinimas: printCart(arr), pvz.: Pienas - 0.69 Eur.
-//         2. Atspausdinti prekių kiekį: get…(arr);
-//         3. Atspausdinti prekių sumą: get…(arr);
-//         4. Atspausdinti prekę, kurios kaina yra didžiausia, get…(arr), pvz.: Kumpis - 7.99 Eur.
-//         5. Atspausdinti prekę, kurios kaina yra mažiausia, get…(arr), pvz.: Trintukas - 0.29 Eur.
-//         6. Atspausdinti vidutinę prekių kainą: get…(arr);
+function prinThreeObjValues(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (var key in arr[i]) {
+            console.log(arr[i][key]);
+        }
+    }
+}
+
+// 6. Sukurti tuščią masyvą. Iš klaviatūros n kartų įvesti prekės pavadinimą ir kainą (visos prekės skirtingos). Šią prekės informaciją išsaugoti objekte ir pridėti į masyvą. Sukurti atitinkamas funkcijas ir atspausdinti rezultatus:
+// 6. 1. Visų prekių sąrašą: prekės pavadinimas: printCart(arr), pvz.: Pienas - 0.69 Eur.
+// 6. 2. Atspausdinti prekių kiekį: get…(arr);
+// 6. 3. Atspausdinti prekių sumą: get…(arr);
+// 6. 4. Atspausdinti prekę, kurios kaina yra didžiausia, get…(arr), pvz.: Kumpis - 7.99 Eur.
+// 6. 5. Atspausdinti prekę, kurios kaina yra mažiausia, get…(arr), pvz.: Trintukas - 0.29 Eur.
+// 6. 6. Atspausdinti vidutinę prekių kainą: get…(arr);
 // Papildomai:
 
 
