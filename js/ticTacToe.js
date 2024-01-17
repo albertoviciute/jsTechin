@@ -29,7 +29,7 @@ function computerMove(start) {
     game(div, start);
 }
 
-function game(div, start) {
+function game(div) {
     let checkDiv = document.getElementsByClassName('container');
     if (div.textContent == '' && checkDiv.length === 0) {
         if (start == 1) {
@@ -47,7 +47,7 @@ function game(div, start) {
                 return;
             }
             start = 1;
-            setTimeout(() => computerMove(start), 500);
+            setTimeout(() => computerMove(), 2000);
             moveInfo.textContent = 'Computer move';
         }
     } else {
